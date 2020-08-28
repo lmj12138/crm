@@ -1,8 +1,11 @@
 //配置请求路径
-axios.defaults.baseURL = "http://localhost:8888"
+//axios.defaults.baseURL = "http://localhost:8888"
+axios.defaults.baseURL = "http://127.0.0.1:8888"
 //数据以表单的形式扔给服务器
 axios.defaults.headers["Content-Type"] = 'application/x-www-form-urlencoded';
 
+//后台访问每次访问都带上cookie
+axios.defaults.withCredentials=true;
 //还是数据以表单的形式扔给服务器，数据格式是 ：name=z3&age=4
 axios.defaults.transformRequest = function (data) {
     if (!data) return data;//如果没有给服务器传数据
